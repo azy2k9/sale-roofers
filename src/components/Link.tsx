@@ -11,7 +11,7 @@ const Button = styled.a`
     display: block;
     width: 0;
     height: 2px;
-    background: black;
+    background: ${({ theme }) => theme.colors.white};
     transition: width 0.2s;
   }
 
@@ -22,10 +22,11 @@ const Button = styled.a`
 
 interface Props {
   children: React.ReactNode;
+  link: string;
 }
 
-const Link = ({ children }: Props) => {
-  return <Button className="link">{children}</Button>;
+const Link = ({ children, link }: Props) => {
+  return <Button href={link}>{children}</Button>;
 };
 
 export default Link;

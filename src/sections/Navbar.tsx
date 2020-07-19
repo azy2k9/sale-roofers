@@ -26,7 +26,6 @@ const Container = styled.div<Props>`
     transform: translateY(-100%);
     z-index: 0;
     position: relative;
-    color: black;
 
     svg {
       height: 48px;
@@ -42,10 +41,10 @@ interface Props {
 const Navbar: React.FC<Props> = ({ isOpen }: Props) => {
   return (
     <Container isOpen={isOpen}>
-      <Link>Home</Link>
-      <Link>About Us</Link>
-      <Link>Services</Link>
-      <Link>Contact</Link>
+      <Link link="#home">Home</Link>
+      <Link link="#about-us">About Us</Link>
+      <Link link="#services">Services</Link>
+      <Link link="#contact">Contact</Link>
     </Container>
   );
 };

@@ -16,7 +16,7 @@ const StyledHamburgerIcon = styled.svg<Props>`
   .line {
     fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, transform 400ms;
-    stroke: ${({ theme }) => theme.colors.paragraph};
+    stroke: ${({ theme }) => theme.colors.primary};
     stroke-width: 5.5;
     stroke-linecap: round;
     transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};

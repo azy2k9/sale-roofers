@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import Homepage from './pages/Homepage';
+import Landing from './pages/Landing';
 import Wrapper from './components/Wrapper';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
     <Wrapper>
-      <Homepage />
+      <Landing />
+      <AboutUs />
     </Wrapper>
   );
 }
