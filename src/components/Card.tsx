@@ -6,15 +6,20 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from './Typography';
 import Heading from './Heading';
 
-const useStyles = makeStyles({
-  root: {
-    flex: '0 1 48%',
+const useStyles = makeStyles((theme) => ({
+  card: {
+    [theme.breakpoints.down('sm')]: {
+      flex: '1 1 49%',
+    },
     margin: '10px 5px',
+    [theme.breakpoints.up('md')]: {
+      flex: '1 1 48%',
+    },
   },
-  media: {
-    height: 140,
+  cover: {
+    height: 200,
   },
-});
+}));
 
 interface Props {
   img: string;
@@ -26,8 +31,8 @@ const Card = ({ img, children, heading }: Props) => {
   const classes = useStyles();
 
   return (
-    <MaterialCard className={classes.root}>
-      <CardMedia className={classes.media} image={img} />
+    <MaterialCard className={classes.card}>
+      <CardMedia image={img} className={classes.cover} />
       <CardContent>
         <Heading weight="regular">{heading}</Heading>
         <br />
