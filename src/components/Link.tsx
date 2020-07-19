@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Button = styled.a`
   display: inline-block;
   text-decoration: none;
+  color: ${({ theme }) => theme.colors.white};
 
   ::after {
     content: '';

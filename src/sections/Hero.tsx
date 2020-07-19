@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Typography from '../components/Typography';
 
 const Container = styled.div`
   height: 100vh;
@@ -10,12 +11,22 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => theme.colors.primary};
+  flex-direction: column;
+  color: ${({ theme }) => theme.colors.white};
   height: 100vh;
 `;
 
 const Hero = () => {
-  return <Container>All items placed in here will be centered</Container>;
+  return (
+    <Container>
+      <Typography size="largest" weight="bold" variant="primary">
+        Sale Roofers
+      </Typography>
+      <Typography variant="secondary">
+        Leading roofers in Sale, Manchester and Cheshire
+      </Typography>
+    </Container>
+  );
 };
 
 export default Hero;
