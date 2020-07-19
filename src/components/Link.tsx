@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const Button = styled.a`
   display: inline-block;
-  color: white;
   text-decoration: none;
 
   ::after {
@@ -11,7 +10,7 @@ const Button = styled.a`
     display: block;
     width: 0;
     height: 2px;
-    background: white;
+    background: black;
     transition: width 0.2s;
   }
 
@@ -25,7 +24,7 @@ interface Props {
 }
 
 const Link = ({ children }: Props) => {
-  return <Button>{children}</Button>;
+  return <Button className="link">{children}</Button>;
 };
 
 export default Link;

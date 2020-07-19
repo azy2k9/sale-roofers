@@ -1,49 +1,51 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Link from '../components/Link';
 
-const Container = styled.div`
-  height: 10vh;
+// Create the keyframes
+const slideDown = keyframes`
+  to {
+    transform: translateY(0%);
+  }
+`;
+
+const Container = styled.div<Props>`
+  animation: ${slideDown} 0.3s ease forwards;
   display: flex;
-  justify-content: space-between;
-  color: white;
-  width: 90vw;
-  padding: 5vh 5vw;
+  color: ${({ theme }) => theme.colors.headline};
+  width: 50vw;
+  justify-content: space-evenly;
+  padding-right: 12px;
+
+  @media ${({ theme }) => theme.mediaQueries.mobile} {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.primary};
+    transform: translateY(-100%);
+    z-index: 0;
+    position: relative;
+    color: black;
+
+    svg {
+      height: 48px;
+      width: 48px;
+    }
+  }
 `;
 
-const List = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
+interface Props {
+  isOpen: boolean;
+}
 
-const Links = styled.div`
-  display: flex;
-  width: 40vw;
-  align-items: center;
-`;
-
-const Logo = styled.img`
-  height: 100px;
-  width: 200px;
-`;
-
-const Navbar = () => {
+const Navbar: React.FC<Props> = ({ isOpen }: Props) => {
   return (
-    <Container>
-      <Links>
-        <Logo src="/logo.png" alt="sale roofers" />
-      </Links>
-      <Links>
-        <List>
-          <Link>Home</Link>
-          <Link>About Us</Link>
-          <Link>Services</Link>
-          <Link>Contact</Link>
-        </List>
-      </Links>
+    <Container isOpen={isOpen}>
+      <Link>Home</Link>
+      <Link>About Us</Link>
+      <Link>Services</Link>
+      <Link>Contact</Link>
     </Container>
   );
 };

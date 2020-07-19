@@ -4,10 +4,14 @@ import styled from 'styled-components';
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: red;
+  background: url('/hero.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: ${({ theme }) => theme.colors.primary};
+  height: 100vh;
 `;
 
 const Hero = () => {
