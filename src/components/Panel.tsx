@@ -14,11 +14,10 @@ const Container = styled.div<Props>`
 const Content = styled.div<Props>`
   display: flex;
   background-color: ${({ theme }) => theme.colors.secondary};
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 50vh;
+  justify-content: ${({ rows }) => (rows ? 'space-evenly' : 'center')};
+  flex-wrap: wrap;
   width: 80vw;
+  padding: 3rem 0;
   border-bottom: 1px solid ${({ theme }) => theme.colors.paragraph};
 `;
 
@@ -26,13 +25,14 @@ interface Props {
   children: React.ReactNode;
   anchor?: string;
   header?: React.ReactNode;
+  rows?: boolean;
 }
 
-const Panel = ({ children, anchor, header }: Props) => {
+const Panel = ({ children, anchor, header, rows }: Props) => {
   return (
     <Container id={anchor}>
       {header}
-      <Content>{children}</Content>
+      <Content rows={rows}>{children}</Content>
     </Container>
   );
 };

@@ -7,7 +7,6 @@ const Container = styled.div<Props>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem;
   z-index: 1000;
 
   @media ${({ theme }) => theme.mediaQueries.mobile} {
@@ -29,6 +28,8 @@ interface Props {
 }
 
 const Logo = styled.img`
+  margin-top: 1rem;
+  margin-left: 3rem;
   height: 70px;
 `;
 

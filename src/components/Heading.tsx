@@ -8,6 +8,7 @@ interface HeadingProps {
   fullWidth?: boolean;
   children: React.ReactNode;
   variant?: string;
+  weight?: string;
 }
 
 interface Props {
@@ -30,10 +31,15 @@ const Heading: React.FC<HeadingProps> = ({
   color2,
   fullWidth,
   variant,
+  weight,
 }: HeadingProps) => {
   return (
     <>
-      <Typography size="large" variant={variant || 'heading'} weight="bold">
+      <Typography
+        size="large"
+        variant={variant || 'heading'}
+        weight={weight || 'bold'}
+      >
         {children}
       </Typography>
       <StyledHeading color1={color1} color2={color2} fullWidth={fullWidth} />
