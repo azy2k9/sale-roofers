@@ -16,4 +16,8 @@ html, body, #root {
     display: flex;
     flex-direction: column;
 }
+
+html {
+    overflow-y: auto;
+}
 `;

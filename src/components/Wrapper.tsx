@@ -29,7 +29,7 @@ const Container = styled.div<Props>`
   display: flex;
   overflow-y: auto;
   position: absolute;
-  /* position: relative; */
+  flex-direction: column;
   transition: opacity 0.3s ease;
   z-index: 0;
   @media ${({ theme }) => theme.mediaQueries.mobile} {
