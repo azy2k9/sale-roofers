@@ -7,7 +7,7 @@ const Container = styled.div<Props>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 3rem;
+  padding-top: 1rem;
   z-index: 1000;
 
   @media ${({ theme }) => theme.mediaQueries.mobile} {
@@ -29,8 +29,7 @@ interface Props {
 }
 
 const Logo = styled.img`
-  height: 100px;
-  width: 200px;
+  height: 70px;
 `;
 
 const Header: React.FC<Props> = (props: Props) => {
@@ -38,7 +37,10 @@ const Header: React.FC<Props> = (props: Props) => {
   return (
     <>
       <Container {...props}>
-        <Logo src="/logo.png" alt="sale roofers" />
+        <Logo
+          src={`/logo-${isOpen ? 'normal' : 'alternate'}.png`}
+          alt="sale roofers"
+        />
         <HamburgerButton isOpen={isOpen} handleClick={handleNavbar} />
         <NavbarContainer>
           <Navbar isOpen={false} />
