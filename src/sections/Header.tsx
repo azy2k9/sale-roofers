@@ -12,7 +12,7 @@ const Container = styled.div<Props>`
   @media ${({ theme }) => theme.mediaQueries.mobile} {
     justify-content: center;
     background-color: ${({ theme, isOpen }) =>
-      isOpen ? theme.colors.white : ''};
+    isOpen ? theme.colors.white : ''};
   }
 `;
 
@@ -35,6 +35,8 @@ const Logo = styled.img`
 
 const Header: React.FC<Props> = (props: Props) => {
   const { handleNavbar, isOpen } = props;
+  const { innerWidth: width } = window;
+
   return (
     <>
       <Container {...props}>
@@ -44,7 +46,10 @@ const Header: React.FC<Props> = (props: Props) => {
         />
         <HamburgerButton isOpen={isOpen} handleClick={handleNavbar} />
         <NavbarContainer>
-          <Navbar isOpen={false} handleClick={handleNavbar} />
+          <Navbar 
+            isOpen={false}
+            handleClick={width > 769 ? handleNavbar : () => {}}
+          />
         </NavbarContainer>
       </Container>
     </>
