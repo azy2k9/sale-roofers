@@ -10,6 +10,7 @@ const Container = styled.div`
   height: 50vh;
   width: 100vw;
   padding: 0px 5vw;
+  border-bottom: 0.5px solid ${({ theme }) => theme.colors.paragraph};
 `;
 
 interface Props {

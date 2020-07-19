@@ -1,10 +1,12 @@
 import React from 'react';
 import Typography from '../components/Typography';
 import Panel from '../components/Panel';
+import Heading from '../components/Heading';
 
 const AboutUs = () => {
   return (
     <Panel anchor="about-us">
+      <Heading>About Us</Heading>
       <Typography>
         Welcome from Sale Roofers, a leading roofer in Sale. With numerous years
         experience in the roofing industry, we provide all types of roofing
