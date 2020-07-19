@@ -22,7 +22,7 @@ const Container = styled.div<Props>`
     align-items: center;
     width: 100vw;
     height: 100%;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.paragraph};
     transform: translateY(-100%);
     z-index: 0;
     position: relative;
@@ -36,15 +36,25 @@ const Container = styled.div<Props>`
 
 interface Props {
   isOpen: boolean;
+  handleClick: () => void;
 }
 
-const Navbar: React.FC<Props> = ({ isOpen }: Props) => {
+const Navbar: React.FC<Props> = (props: Props) => {
+  const { handleClick } = props;
   return (
-    <Container isOpen={isOpen}>
-      <Link link="#home">Home</Link>
-      <Link link="#about-us">About Us</Link>
-      <Link link="#services">Services</Link>
-      <Link link="#contact">Contact</Link>
+    <Container {...props}>
+      <Link link="#home" handleClick={handleClick}>
+        Home
+      </Link>
+      <Link link="#about-us" handleClick={handleClick}>
+        About Us
+      </Link>
+      <Link link="#services" handleClick={handleClick}>
+        Services
+      </Link>
+      <Link link="#contact" handleClick={handleClick}>
+        Contact
+      </Link>
     </Container>
   );
 };

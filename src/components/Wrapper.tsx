@@ -34,6 +34,7 @@ const Container = styled.div<Props>`
   z-index: 0;
   @media ${({ theme }) => theme.mediaQueries.mobile} {
     opacity: ${({ isOpen }) => (isOpen ? '0' : '1')};
+    height: ${({ isOpen }) => (isOpen ? '100vh' : '')};
   }
 `;
 
@@ -48,7 +49,7 @@ const Wrapper: React.FC<WrapperProps> = ({ children }: WrapperProps) => {
       <GlobalStyles />
       <Header handleNavbar={handleNavbar} isOpen={isOpen} />
       <MobileContainer isOpen={isOpen}>
-        <Navbar isOpen={isOpen} />
+        <Navbar isOpen={isOpen} handleClick={handleNavbar} />
       </MobileContainer>
       <Container isOpen={isOpen}>{children}</Container>
     </ThemeProvider>

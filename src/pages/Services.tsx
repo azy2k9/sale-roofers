@@ -58,7 +58,7 @@ const Services = () => {
         has got into their damaged chimney, fell down and is sat behind their
         fire place trying to get out(we have seen it before with our own eyes!).
       </Card>
-      <Card heading="Guttering</" img="/gutter.jpg">
+      <Card heading="Guttering" img="/gutter.jpg">
         Gutterin The source of any guttering issues could potentially be from a
         blockage or adverse weather conditions - we know that we sound like a
         broken record when it comes to weather damage, but it's very true! - so

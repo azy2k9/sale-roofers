@@ -23,10 +23,15 @@ const Button = styled.a`
 interface Props {
   children: React.ReactNode;
   link: string;
+  handleClick: () => void;
 }
 
-const Link = ({ children, link }: Props) => {
-  return <Button href={link}>{children}</Button>;
+const Link = ({ children, link, handleClick }: Props) => {
+  return (
+    <Button href={link} onClick={(e) => handleClick()}>
+      {children}
+    </Button>
+  );
 };
 
 export default Link;

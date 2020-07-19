@@ -44,7 +44,7 @@ const Header: React.FC<Props> = (props: Props) => {
         />
         <HamburgerButton isOpen={isOpen} handleClick={handleNavbar} />
         <NavbarContainer>
-          <Navbar isOpen={false} />
+          <Navbar isOpen={false} handleClick={handleNavbar} />
         </NavbarContainer>
       </Container>
     </>
