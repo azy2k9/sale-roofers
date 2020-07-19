@@ -39,7 +39,7 @@ const Header: React.FC<Props> = (props: Props) => {
     <>
       <Container {...props}>
         <Logo
-          src={`/logo-${isOpen ? 'normal' : 'alternate'}.png`}
+          src={`/logo-${isOpen ? 'alt' : 'normal'}.png`}
           alt="sale roofers"
         />
         <HamburgerButton isOpen={isOpen} handleClick={handleNavbar} />
