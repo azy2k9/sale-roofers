@@ -12,7 +12,7 @@ const Button = styled.a`
     width: 0;
     height: 2px;
     background: white;
-    transition: width 0.3s;
+    transition: width 0.2s;
   }
 
   :hover::after {

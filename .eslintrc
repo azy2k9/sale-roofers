@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier", "@typescript-eslint"],
+  "plugins": ["prettier", "@typescript-eslint", "import"],
   "extends": ["airbnb-typescript", "react-app", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -13,6 +13,7 @@
     }
   },
   "rules": {
+    "import/order": "error",
     "object-curly-spacing": ["warn", "always"],
     "no-unused-vars": [
       "warn",
